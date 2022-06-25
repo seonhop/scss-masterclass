@@ -2,17 +2,19 @@
 @import "_variables";
 @import "_elements";
 
-* {
-    box-sizing: border-box;
+@import "_mixins";
+
+h1 {
+    @include sexyTitle();
 }
 
-body {
-    background-color: $bg;
-}
+a {
+    margin-bottom: 30px;
+    &:nth-child(odd) {
+        @include link("odd");
+    }
 
-.box {
-    margin-top: 20px;
-    h2 {
-        color: blue;
+    &:nth-child(even) {
+        @include link("even");
     }
 }
